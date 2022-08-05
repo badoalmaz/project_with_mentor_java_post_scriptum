@@ -17,10 +17,10 @@ const AuthContextProvider = ({ children }) => {
     headers: { "Content-Type": "multipart/form-data" },
   };
 
-  const register = async (user) => {
+  const register = async (email, password) => {
     let formData = new FormData();
-    formData.append("username", user.email);
-    formData.append("password", user.password);
+    formData.append("username", email);
+    formData.append("password", password);
 
     try {
       const res = await axios.post(`${API}register/`, formData, config);
@@ -32,18 +32,18 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const login = async (user) => {
-    console.log(user);
+  const login = async (email, password) => {
+    // console.log(user);
     let formData = new FormData();
-    formData.append("username", user.email);
-    formData.append("password", user.password);
+    formData.append("username", email);
+    formData.append("password", password);
 
     try {
       let res = await axios.post(`${API}api/token/`, formData, config);
       navigate("/");
       console.log(res.data);
       localStorage.setItem("token", JSON.stringify(res.data));
-      localStorage.setItem("username", user.email);
+      localStorage.setItem("username", email);
     } catch (error) {
       console.log(error);
       setError("Error occured:", error);
