@@ -98,6 +98,8 @@ export default function LoginPage() {
               // onSubmit={handleSubmit}
               sx={{ mt: 1 }}
             >
+              {error ? <Typography>{error}</Typography> : null}
+
               <TextField
                 margin="normal"
                 required

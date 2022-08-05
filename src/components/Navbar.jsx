@@ -6,8 +6,18 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useAuth } from "../contexts/AuthContextProvider";
 
 export default function Navbar() {
+  const { user, checkAuth, error, logout } = useAuth();
+  console.log(user, "useeeeeeeeeeeeeeeeeeeeeer");
+
+  React.useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
