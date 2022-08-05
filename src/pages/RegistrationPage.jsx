@@ -47,9 +47,11 @@ export default function RegistrationPage() {
   // };
 
   const { register, error } = useAuth();
+
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   console.log(email, password);
+  console.log(error);
 
   function handleRegister(email, password) {
     register(email, password);
@@ -97,6 +99,7 @@ export default function RegistrationPage() {
               // onSubmit={handleSubmit}
               sx={{ mt: 1 }}
             >
+              {error ? <Typography>{error}</Typography> : null}
               <TextField
                 margin="normal"
                 required

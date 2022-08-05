@@ -28,7 +28,7 @@ const AuthContextProvider = ({ children }) => {
       navigate("/login");
     } catch (error) {
       console.log(error);
-      setError("Error occured:", error);
+      setError("Error occured:");
     }
   };
 
@@ -83,7 +83,7 @@ const AuthContextProvider = ({ children }) => {
   }
 
   return (
-    <authContext.Provider value={{ register, login, checkAuth, logout }}>
+    <authContext.Provider value={{ register, login, checkAuth, logout, error }}>
       {children}
     </authContext.Provider>
   );
