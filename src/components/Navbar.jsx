@@ -5,9 +5,25 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import { useAuthContext } from "../contexts/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+
+  const { user, checkAuth, error, logout } = useAuthContext();
+
+  const navigate = useNavigate();
+
+  React.useEffect(()=> {
+    if (localStorage.getItem('token')) {
+      checkAuth();
+    }
+  }, []);
+
+  console.log(user)
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -18,13 +34,31 @@ export default function Navbar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={()=>navigate(-1)}
           >
-            <MenuIcon />
+            <ArrowBackIosRoundedIcon />
+          </IconButton>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            onClick={()=>navigate(1)}
+          >
+            <ArrowForwardIosRoundedIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+          { user ? (<Button color="inherit" onClick={()=>{
+            logout();
+            navigate('/login');
+          }}>Logout</Button>) : (
+          <>
+            <Button color="inherit" onClick={()=>navigate('/register')}>Register</Button>
+            <Button color="inherit" onClick={()=>navigate('/login')}>Login</Button>
+          </>) }
         </Toolbar>
       </AppBar>
     </Box>

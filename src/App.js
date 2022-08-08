@@ -1,12 +1,17 @@
 import Navbar from "./components/Navbar";
+import AuthContextProvider from "./contexts/AuthContextProvider";
+import ProductContextProvider from "./contexts/ProductContextProvider";
 import MainRoutes from "./MainRoutes";
 
 function App() {
   return (
     <>
-      {" "}
-      <Navbar />
-      <MainRoutes />
+      <AuthContextProvider>
+        <ProductContextProvider>
+          <Navbar />
+          <MainRoutes />
+        </ProductContextProvider>
+      </AuthContextProvider>
     </>
   );
 }

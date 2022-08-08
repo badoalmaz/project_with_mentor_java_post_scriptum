@@ -60,8 +60,8 @@ const MainRoutes = () => {
   ];
   return (
     <Routes>
-      {PUBLIC_ROUTES.map((item) => (
-        <Route path={item.link} element={item.element} />
+      {PUBLIC_ROUTES.map((item, ind) => (
+        <Route path={item.link} element={item.element} key={ind} />
       ))}
     </Routes>
   );

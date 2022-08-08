@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "name": "name",
+      "description": "descrp",
+      "price": "12312",
+      "picture": "dd",
+      "type": "soo",
+      "id": 1
+    },
+    {
+      "name": "123",
+      "description": "sda",
+      "price": 123123,
+      "picture": "dasd",
+      "type": "asd",
+      "id": 2
+    },
+    {
+      "name": "na",
+      "description": "123",
+      "price": 23123,
+      "picture": "sd",
+      "type": "asd",
+      "id": 3
+    },
+    {
+      "name": "123",
+      "description": "qweqw",
+      "price": 12313,
+      "picture": "123123",
+      "type": "1231231",
+      "id": 4
+    },
+    {
+      "name": "hello",
+      "description": "qw1",
+      "price": 3123,
+      "picture": "ewq",
+      "type": "qwe",
+      "id": 6
+    }
+  ]
+}
