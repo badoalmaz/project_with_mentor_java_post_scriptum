@@ -1,9 +1,12 @@
 import { Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
 
 const AddProduct = () => {
   const { addProduct } = useProducts();
+
+  const navigate = useNavigate();
 
   const [product, setProduct] = useState({
     name: "",
@@ -73,7 +76,14 @@ const AddProduct = () => {
         name="type"
         onChange={handleInp}
       />
-      <Button variant="outlined" fullWidth onClick={() => addProduct(product)}>
+      <Button
+        variant="outlined"
+        fullWidth
+        onClick={() => {
+          addProduct(product);
+          navigate("/products");
+        }}
+      >
         ADD PRODUCT
       </Button>
     </Box>

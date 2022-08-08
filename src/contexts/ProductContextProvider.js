@@ -29,6 +29,7 @@ const ProductContextProvider = ({ children }) => {
 
   const addProduct = async (newProduct) => {
     await axios.post(JSON_API_PRODUCTS, newProduct);
+    getProducts();
   };
 
   const getProducts = async () => {
@@ -40,9 +41,15 @@ const ProductContextProvider = ({ children }) => {
     });
   };
 
+  const deleteProduct = async (id) => {
+    await axios.delete(`${JSON_API_PRODUCTS}/${id}`);
+    getProducts();
+  };
+
   const values = {
     getProducts,
     addProduct,
+    deleteProduct,
 
     products: state.products,
     productDetails: state.productDetails,

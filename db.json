@@ -1,20 +1,20 @@
 {
   "products": [
     {
-      "name": "kujyhtdfghj;l",
-      "description": "lkigfh",
-      "price": "klfghjk",
-      "picture": "lkifg",
-      "type": "popiuyhgdfghjkkjh",
-      "id": 1
+      "name": "dfdfdf",
+      "description": "dfdffd",
+      "price": null,
+      "picture": "dffd",
+      "type": "dfdfdf",
+      "id": 3
     },
     {
-      "name": "dfdf",
-      "description": "df",
-      "price": 234432,
-      "picture": "fdfe",
-      "type": "fdfef",
-      "id": 2
+      "name": "",
+      "description": "",
+      "price": "",
+      "picture": "",
+      "type": "",
+      "id": 5
     }
   ]
 }
