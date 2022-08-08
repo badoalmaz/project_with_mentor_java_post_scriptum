@@ -1,3 +1,20 @@
 {
-  "products": []
+  "products": [
+    {
+      "name": "kujyhtdfghj;l",
+      "description": "lkigfh",
+      "price": "klfghjk",
+      "picture": "lkifg",
+      "type": "popiuyhgdfghjkkjh",
+      "id": 1
+    },
+    {
+      "name": "dfdf",
+      "description": "df",
+      "price": 234432,
+      "picture": "fdfe",
+      "type": "fdfef",
+      "id": 2
+    }
+  ]
 }

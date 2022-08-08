@@ -16,11 +16,19 @@ const AddProduct = () => {
   console.log(product);
 
   const handleInp = (e) => {
-    let obj = {
-      ...product,
-      [e.target.name]: e.target.value,
-    };
-    setProduct(obj);
+    if (e.target.name === "price") {
+      let obj = {
+        ...product,
+        [e.target.name]: Number(e.target.value),
+      };
+      setProduct(obj);
+    } else {
+      let obj = {
+        ...product,
+        [e.target.name]: e.target.value,
+      };
+      setProduct(obj);
+    }
   };
 
   return (
@@ -65,7 +73,7 @@ const AddProduct = () => {
         name="type"
         onChange={handleInp}
       />
-      <Button variant="outlined" fullWidth>
+      <Button variant="outlined" fullWidth onClick={() => addProduct(product)}>
         ADD PRODUCT
       </Button>
     </Box>
