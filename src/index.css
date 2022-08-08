@@ -3,3 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#reg {
+  color: white;
+}
+
+#login {
+  color: white;
+}
+
+#login a {
+  text-decoration: none !important;
+}

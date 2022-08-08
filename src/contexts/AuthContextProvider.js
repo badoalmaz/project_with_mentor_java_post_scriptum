@@ -1,7 +1,93 @@
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const AuthContextProvider = () => {
-  return <div>AuthContextProvider</div>;
+export const authContext = createContext();
+export const useAuth = () => useContext(authContext);
+
+const API = "http://35.239.251.89/";
+
+const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState("");
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  const config = {
+    headers: { "Content-Type": "multipart/form-data" },
+  };
+
+  const register = async (email, password) => {
+    let formData = new FormData();
+    formData.append("username", email);
+    formData.append("password", password);
+
+    try {
+      const res = await axios.post(`${API}register/`, formData, config);
+      console.log(res);
+      navigate("/login");
+    } catch (error) {
+      // console.log(error);
+      setError("Error occured:", error);
+    }
+  };
+
+  const login = async (email, password) => {
+    console.log(user);
+
+    let formData = new FormData();
+    formData.append("username", email);
+    formData.append("password", password);
+
+    try {
+      let res = await axios.post(`${API}api/token/`, formData, config);
+      navigate("/");
+      console.log(res.data);
+
+      localStorage.setItem("token", JSON.stringify(res.data));
+      localStorage.setItem("username", email);
+    } catch (error) {
+      console.log(error);
+      setError("Error occured:", error);
+    }
+  };
+
+  async function checkAuth() {
+    let token = JSON.parse(localStorage.getItem("token"));
+
+    try {
+      const Authorization = `Bearer ${token.access}`;
+      let res = await axios.post(
+        `${API}api/token/refresh/`,
+        {
+          refresh: token.refresh,
+        },
+        { headers: { Authorization } }
+      );
+
+      localStorage.setItem(
+        "token",
+        JSON.stringify({ refresh: token.refresh, access: res.data.access })
+      );
+
+      let username = localStorage.getItem("username");
+      setUser(username);
+    } catch (error) {}
+  }
+
+  function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    setUser("");
+  }
+
+  return (
+    <authContext.Provider
+      value={{ register, login, checkAuth, logout, user, error }}
+    >
+      {children}
+    </authContext.Provider>
+  );
 };
 
 export default AuthContextProvider;
