@@ -25,21 +25,14 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <IconButton onClick={() => navigate(-1)}>
-              <ArrowBackIosRoundedIcon />
-            </IconButton>
-
-            <IconButton onClick={() => navigate(1)}>
-              <ArrowBackIosRoundedIcon sx={{ transform: "rotate(180deg)" }} />
-            </IconButton>
+          <IconButton onClick={() => navigate(-1)}>
+            <ArrowBackIosRoundedIcon />
           </IconButton>
+
+          <IconButton onClick={() => navigate(1)}>
+            <ArrowBackIosRoundedIcon sx={{ transform: "rotate(180deg)" }} />
+          </IconButton>
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
