@@ -7,9 +7,10 @@ const HomePage = () => {
     AOS.init();
     AOS.refresh();
   }, []);
-  return;
-  <>
-    <div id="aos" data-aos="zoom-in"></div>
-  </>;
+  return (
+    <>
+      <div id="aos" data-aos="zoom-in"></div>
+    </>
+  );
 };
 export default HomePage;
