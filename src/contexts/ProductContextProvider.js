@@ -46,10 +46,19 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
 
+  const getProductDetails = async (id) => {
+    const { data } = await axios(`${JSON_API_PRODUCTS}/${id}`);
+    dispatch({
+      type: ACTIONS.GET_PRODUCT_DETAILS,
+      payload: data,
+    });
+  };
+
   const values = {
     getProducts,
     addProduct,
     deleteProduct,
+    getProductDetails,
 
     products: state.products,
     productDetails: state.productDetails,

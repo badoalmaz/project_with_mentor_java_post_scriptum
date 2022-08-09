@@ -1,7 +1,39 @@
-import React from "react";
+import { Grid, Paper, Typography } from "@mui/material";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useProducts } from "../../contexts/ProductContextProvider";
 
 const ProductDetails = () => {
-  return <div>ProductDetails</div>;
+  const { id } = useParams();
+  // console.log(id);
+
+  const { getProductDetails, productDetails } = useProducts();
+
+  useEffect(() => {
+    getProductDetails(id);
+  }, []);
+
+  console.log(productDetails);
+
+  return (
+    <Paper>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <img
+            src={productDetails.picture}
+            alt=""
+            style={{ maxWidth: "100%" }}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant="h3">{productDetails.name}</Typography>
+          <Typography variant="subtitle1">{productDetails.type}</Typography>
+          <Typography variant="caption">{productDetails.price}</Typography>
+          <Typography>{productDetails.description}</Typography>
+        </Grid>
+      </Grid>
+    </Paper>
+  );
 };
 
 export default ProductDetails;

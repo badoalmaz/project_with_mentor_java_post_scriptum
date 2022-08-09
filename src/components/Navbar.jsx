@@ -25,16 +25,37 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton onClick={() => navigate(-1)}>
+          {/* <IconButton onClick={() => navigate(-1)}>
             <ArrowBackIosRoundedIcon />
           </IconButton>
 
           <IconButton onClick={() => navigate(1)}>
             <ArrowBackIosRoundedIcon sx={{ transform: "rotate(180deg)" }} />
-          </IconButton>
+          </IconButton> */}
 
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+            onClick={() => navigate("/")}
+          >
+            Home
+          </Typography>
+
+          <Typography
+            component="span"
+            sx={{ flexGrow: 1 }}
+            onClick={() => navigate("/admin")}
+          >
+            Admin
+          </Typography>
+
+          <Typography
+            component="span"
+            sx={{ flexGrow: 1 }}
+            onClick={() => navigate("/products")}
+          >
+            Products
           </Typography>
 
           {user ? (
