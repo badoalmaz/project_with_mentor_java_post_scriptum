@@ -16,13 +16,13 @@ const ProductDetails = () => {
   console.log(productDetails);
 
   return (
-    <Paper>
+    <Paper sx={{ m: 5 }} elevation={24}>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <img
             src={productDetails.picture}
             alt=""
-            style={{ maxWidth: "100%" }}
+            style={{ maxWidth: "100%", maxHeight: "70vh" }}
           />
         </Grid>
         <Grid item xs={6}>

@@ -36,7 +36,11 @@ export default function ProductCard({ item }) {
         <Button size="small" onClick={() => deleteProduct(item.id)}>
           DELETE
         </Button>
-        <Button size="small">EDIT</Button>
+
+        <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+          EDIT
+        </Button>
+
         <Button size="small" onClick={() => navigate(`/products/${item.id}`)}>
           MORE
         </Button>
