@@ -1,11 +1,14 @@
-import { Box } from "@mui/material";
-import React, { useEffect } from "react";
+import { Box, Pagination } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
   const { products, getProducts } = useProducts();
-  console.log(products);
+
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 3;
+  const count = Math.ceil(products.length / itemsPerPage);
 
   useEffect(() => {
     getProducts();
@@ -15,16 +18,30 @@ const ProductList = () => {
     <Box
       sx={{
         display: "flex",
-        justifyContent: "space-around",
-        flexWrap: "wrap",
         mt: 5,
+        flexDirection: "column",
       }}
     >
-      {products ? (
-        products.map((item) => <ProductCard item={item} key={item.id} />)
-      ) : (
-        <h3>Loading...</h3>
-      )}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-around",
+          flexWrap: "wrap",
+        }}
+      >
+        {products ? (
+          products.map((item) => <ProductCard item={item} key={item.id} />)
+        ) : (
+          <h3>Loading...</h3>
+        )}
+      </Box>
+
+      <Pagination
+        variant="outlined"
+        shape="rounded"
+        sx={{ m: "0 auto" }}
+        count={count}
+      />
     </Box>
   );
 };

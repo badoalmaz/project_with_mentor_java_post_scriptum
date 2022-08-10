@@ -32,7 +32,7 @@ const SideBar = () => {
   //   console.log(window.location.search);
 
   return (
-    <Paper sx={{ m: 5 }}>
+    <Paper sx={{ m: 5, display: "flex", flexDirection: "column", p: 5 }}>
       <TextField
         value={search}
         onChange={(e) => setSearch(e.target.value)}
