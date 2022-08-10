@@ -1,11 +1,20 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { InputAdornment, Paper, TextField } from "@mui/material";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  InputAdornment,
+  Paper,
+  Radio,
+  RadioGroup,
+  TextField,
+} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../contexts/ProductContextProvider";
 
 const SideBar = () => {
-  const { getProducts } = useProducts();
+  const { getProducts, fetchByParams } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [search, setSearch] = useState(searchParams.get("q") || "");
@@ -38,6 +47,30 @@ const SideBar = () => {
         }}
         variant="standard"
       />
+
+      <FormControl>
+        <FormLabel id="demo-radio-buttons-group-label">Category</FormLabel>
+        <RadioGroup
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue="all"
+          name="radio-buttons-group"
+          onChange={(e) => fetchByParams("type", e.target.value)}
+        >
+          <FormControlLabel value="all" control={<Radio />} label="all" />
+          <FormControlLabel
+            value="electronics"
+            control={<Radio />}
+            label="electronics"
+          />
+          <FormControlLabel value="sport" control={<Radio />} label="sport" />
+
+          <FormControlLabel
+            value="clothes"
+            control={<Radio />}
+            label="clothes"
+          />
+        </RadioGroup>
+      </FormControl>
     </Paper>
   );
 };
