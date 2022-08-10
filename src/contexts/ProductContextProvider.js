@@ -65,7 +65,7 @@ const ProductContextProvider = ({ children }) => {
     getProducts();
   };
 
-  const fetchByParams = async (query, value) => {
+  const fetchByParams = (query, value) => {
     const search = new URLSearchParams(location.search);
 
     if (value === "all") {
