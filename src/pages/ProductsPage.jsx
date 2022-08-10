@@ -1,12 +1,15 @@
+import { Box } from "@mui/material";
 import React from "react";
 import ProductList from "../components/products/ProductList";
+import SideBar from "../components/SideBar";
 
 const ProductsPage = () => {
   return (
-    <div>
-      ProductsPage
+    <Box sx={{ display: "flex" }}>
+      {/* ProductsPage */}
+      <SideBar />
       <ProductList />
-    </div>
+    </Box>
   );
 };
 

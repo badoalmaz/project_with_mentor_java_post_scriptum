@@ -6,8 +6,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
-import { useAuth } from "../contexts/AuthContextProvider";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./contexts/AuthContextProvider";
 
 export default function Navbar() {
   const { user, checkAuth, error, logout } = useAuth();
@@ -25,13 +25,13 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          {/* <IconButton onClick={() => navigate(-1)}>
+          <IconButton onClick={() => navigate(-1)}>
             <ArrowBackIosRoundedIcon />
           </IconButton>
 
           <IconButton onClick={() => navigate(1)}>
             <ArrowBackIosRoundedIcon sx={{ transform: "rotate(180deg)" }} />
-          </IconButton> */}
+          </IconButton>
 
           <Typography
             variant="h6"

@@ -14,7 +14,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { Link as RouterLink } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContextProvider";
+import { useAuth } from "../components/contexts/AuthContextProvider";
 
 function Copyright(props) {
   return (

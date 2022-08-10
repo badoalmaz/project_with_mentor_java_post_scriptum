@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AboutUsPage from "./pages/AboutUsPage";
 import AdminPage from "./pages/AdminPage";
-import CartPage from "./pages/CartPage";
+import CardPage from "./pages/CardPage";
 import EditProductPage from "./pages/EditProductPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -29,7 +29,7 @@ const MainRoutes = () => {
     },
     {
       link: "/cart",
-      element: <CartPage />,
+      element: <CardPage />,
       id: 4,
     },
     {

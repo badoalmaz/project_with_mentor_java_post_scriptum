@@ -1,7 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "../../contexts/ProductContextProvider";
+import { useProducts } from "../contexts/ProductContextProvider";
 
 const AddProduct = () => {
   const { addProduct } = useProducts();
