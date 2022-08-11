@@ -6,6 +6,7 @@ import CartPage from "./pages/CartPage";
 import EditProductPage from "./pages/EditProductPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ProductsPage from "./pages/ProductsPage";
 import RegistrationPage from "./pages/RegistrationPage";
@@ -56,6 +57,11 @@ const MainRoutes = () => {
       link: "/register",
       element: <RegistrationPage />,
       id: 9,
+    },
+    {
+      link: "*",
+      element: <NotFoundPage />,
+      id: 10,
     },
   ];
   return (
