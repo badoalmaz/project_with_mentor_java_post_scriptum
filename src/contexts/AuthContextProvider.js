@@ -28,7 +28,7 @@ const AuthContextProvider = ({ children }) => {
       navigate("/login");
     } catch (error) {
       console.log(error);
-      setError("Error occured:");
+      setError("Error occured");
     }
   };
 
@@ -46,7 +46,7 @@ const AuthContextProvider = ({ children }) => {
       localStorage.setItem("username", email);
     } catch (error) {
       console.log(error);
-      setError("Error occured:", error);
+      setError("Wrong username or password", error);
     }
   };
 

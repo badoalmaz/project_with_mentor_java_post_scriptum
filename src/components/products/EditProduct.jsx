@@ -41,11 +41,22 @@ const EditProduct = () => {
   };
 
   return (
-    <Box sx={{ width: "50vw", margin: "10vh auto" }}>
+    <Box
+      sx={{
+        width: "40vw",
+        margin: "10vh auto",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <TextField
+        sx={{ m: 1 }}
         id="standard-basic"
-        label="NAME"
-        variant="standard"
+        label="Name"
+        variant="outlined"
+        color="secondary"
         fullWidth
         name="name"
         onChange={handleInp}
@@ -53,9 +64,11 @@ const EditProduct = () => {
         focused
       />
       <TextField
+        sx={{ m: 1 }}
         id="standard-basic"
-        label="DESCRIPTION"
-        variant="standard"
+        label="Description"
+        variant="outlined"
+        color="secondary"
         fullWidth
         name="description"
         onChange={handleInp}
@@ -63,9 +76,11 @@ const EditProduct = () => {
         focused
       />
       <TextField
+        sx={{ m: 1 }}
         id="standard-basic"
-        label="PRICE"
-        variant="standard"
+        label="Price"
+        variant="outlined"
+        color="secondary"
         fullWidth
         name="price"
         onChange={handleInp}
@@ -73,9 +88,11 @@ const EditProduct = () => {
         focused
       />
       <TextField
+        sx={{ m: 1 }}
         id="standard-basic"
-        label="PICTURE"
-        variant="standard"
+        label="Picture"
+        variant="outlined"
+        color="secondary"
         fullWidth
         name="picture"
         onChange={handleInp}
@@ -83,9 +100,11 @@ const EditProduct = () => {
         focused
       />
       <TextField
+        sx={{ m: 1 }}
         id="standard-basic"
-        label="TYPE"
-        variant="standard"
+        label="Type"
+        variant="outlined"
+        color="secondary"
         fullWidth
         name="type"
         onChange={handleInp}
@@ -93,8 +112,15 @@ const EditProduct = () => {
         focused
       />
       <Button
+        sx={{
+          m: 1,
+          bgcolor: "#8C2CEF",
+          color: "#fff",
+          "&:hover": { bgcolor: "#8125DC" },
+        }}
         variant="outlined"
         fullWidth
+        size="large"
         onClick={() => {
           saveEditedProduct(product);
           navigate("/products");
