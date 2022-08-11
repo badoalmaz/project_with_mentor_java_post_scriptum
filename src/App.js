@@ -12,7 +12,7 @@ function App() {
       <AuthContextProvider>
         <ProductContextProvider>
           <CartContextProvider>
-            <Box sx={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+            <Box sx={{width: '100%', display: 'flex', justifyContent: 'center', position: 'relative'}}>
               <Box sx={{width: '15%'}}>
                 <Navbar />
               </Box>

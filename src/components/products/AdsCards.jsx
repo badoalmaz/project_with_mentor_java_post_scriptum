@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function AdsCards() {
   const navigate = useNavigate();
   return (
-    <Paper>
+    <Box>
       <Box
         sx={{
           display: "flex",
@@ -66,6 +66,6 @@ export default function AdsCards() {
           className="scale"
         />
       </Box>
-    </Paper>
+    </Box>
   );
 }
