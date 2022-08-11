@@ -84,16 +84,18 @@ export default function Navbar() {
               Products
             </Button>
           </Link>
-          <Button
-            sx={{
-              my: 1,
-              color: "#778494",
-              width: "100%",
-              textTransform: "capitalize",
-            }}
-          >
-            About Us
-          </Button>
+          <Link to="/about">
+            <Button
+              sx={{
+                my: 1,
+                color: "#778494",
+                width: "100%",
+                textTransform: "capitalize",
+              }}
+            >
+              About Us
+            </Button>
+          </Link>
           <Button
             sx={{
               my: 1,

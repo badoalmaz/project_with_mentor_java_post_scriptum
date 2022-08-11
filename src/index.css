@@ -9,6 +9,21 @@ a {
   color: inherit;
 }
 
-/* .css-1ptx2yq-MuiInputBase-root-MuiInput-root:before {
-  border: none !important;
-} */
+@media (max-width: 800px) {
+  .about__m {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-left: 20%;   */
+    margin-top: -15%;
+  }
+
+  .about_s {
+    position: absolute;
+    right: 38%;
+  }
+
+  .about_bo {
+    border: none !important;
+  }
+}
