@@ -11,9 +11,13 @@ function App() {
       <AuthContextProvider>
         <ProductContextProvider>
           <CartContextProvider>
-            <Navbar />
-            <Box sx={{ marginLeft: "15vw" }}>
-              <MainRoutes />
+            <Box sx={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+              <Box sx={{width: '15%'}}>
+                <Navbar />
+              </Box>
+              <Box sx={{width: '80%'}}>
+                <MainRoutes />
+              </Box>
             </Box>
           </CartContextProvider>
         </ProductContextProvider>
