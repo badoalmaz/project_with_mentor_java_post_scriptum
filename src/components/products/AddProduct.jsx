@@ -35,50 +35,76 @@ const AddProduct = () => {
   };
 
   return (
-    <Box sx={{ width: "50vw", margin: "10vh auto" }}>
+    <Box
+      sx={{
+        width: "40vw",
+        margin: "10vh auto",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <TextField
+        sx={{ m: 1 }}
+        color="secondary"
         id="standard-basic"
-        label="NAME"
-        variant="standard"
+        label="Name"
+        variant="outlined"
         fullWidth
         name="name"
         onChange={handleInp}
       />
       <TextField
+        sx={{ m: 1 }}
+        color="secondary"
         id="standard-basic"
-        label="DESCRIPTION"
-        variant="standard"
+        label="Description"
+        variant="outlined"
         fullWidth
         name="description"
         onChange={handleInp}
       />
       <TextField
+        sx={{ m: 1 }}
+        color="secondary"
         id="standard-basic"
-        label="PRICE"
-        variant="standard"
+        label="Price"
+        variant="outlined"
         fullWidth
         name="price"
         onChange={handleInp}
       />
       <TextField
+        sx={{ m: 1 }}
+        color="secondary"
         id="standard-basic"
-        label="PICTURE"
-        variant="standard"
+        label="Picture"
+        variant="outlined"
         fullWidth
         name="picture"
         onChange={handleInp}
       />
       <TextField
+        sx={{ m: 1 }}
+        color="secondary"
         id="standard-basic"
-        label="TYPE"
-        variant="standard"
+        label="Type"
+        variant="outlined"
         fullWidth
         name="type"
         onChange={handleInp}
       />
       <Button
+        sx={{
+          m: 1,
+          bgcolor: "#8C2CEF",
+          color: "#fff",
+          "&:hover": { bgcolor: "#8125DC" },
+        }}
         variant="outlined"
         fullWidth
+        size="large"
         onClick={() => {
           addProduct(product);
           navigate("/products");

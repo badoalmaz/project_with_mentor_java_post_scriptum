@@ -8,8 +8,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useCart } from "../contexts/CartContextProvider";
-import { Button, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -72,7 +73,7 @@ export default function Cart() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {cart.products.map((row) => (
+          {cart?.products.map((row) => (
             <StyledTableRow key={row.item.id}>
               <StyledTableCell component="th" scope="row">
                 <img src={row.item.picture} alt="" width="70" />
@@ -86,11 +87,9 @@ export default function Cart() {
               </StyledTableCell>
               <StyledTableCell align="right">{row.item.price}</StyledTableCell>
               <StyledTableCell align="right">
-                <input
+                <TextField
                   type="number"
                   value={row.count}
-                  //   min={1}
-                  //   max={100}
                   onChange={(e) =>
                     changeProductCount(e.target.value, row.item.id)
                   }
@@ -99,9 +98,10 @@ export default function Cart() {
 
               <StyledTableCell align="right">{row.subPrice}</StyledTableCell>
               <StyledTableCell align="right">
-                <Button onClick={() => deleteProductInCart(row.item.id)}>
-                  DELETE
-                </Button>
+                <Button
+                  onClick={() => deleteProductInCart(row.item.id)}
+                  startIcon={<DeleteIcon />}
+                ></Button>
               </StyledTableCell>
             </StyledTableRow>
           ))}
@@ -109,7 +109,7 @@ export default function Cart() {
       </Table>
       <Box sx={{ m: 5 }}>
         <Typography variant="h6" component="div">
-          Total price: {cart.totalPrice}
+          Total price: {cart?.totalPrice}
           <Button onClick={cartCleaner}>BUY NOW</Button>
         </Typography>
       </Box>
