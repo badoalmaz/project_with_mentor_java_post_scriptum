@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
@@ -38,13 +38,14 @@ const AddProduct = () => {
     <Box
       sx={{
         width: "40vw",
-        margin: "10vh auto",
+        margin: "0 auto",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
+      <Typography variant="h6" sx={{m:2}}>Add new product</Typography>
       <TextField
         sx={{ m: 1 }}
         color="secondary"
