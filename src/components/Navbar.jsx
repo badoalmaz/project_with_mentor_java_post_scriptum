@@ -46,7 +46,7 @@ export default function Navbar() {
             <Typography sx={{ color: '#8C2CEF', fontWeight: 700, mx: 2 }}>MakerShop</Typography>
           </Box>
           <Button sx={{ my: 1, color: '#778494', width: '100%', textTransform: 'capitalize', mt: 5 }}>Overview</Button>
-          <Button sx={{ my: 1, color: '#778494', width: '100%', textTransform: 'capitalize' }}>Orders</Button>
+          <Button sx={{ my: 1, color: '#778494', width: '100%', textTransform: 'capitalize' }} onClick={()=> navigate("/cart")}>Orders</Button>
           <Button sx={{ my: 1, color: '#778494', width: '100%', textTransform: 'capitalize' }} onClick={()=>navigate("/products")}>Products</Button>
           <Button sx={{ my: 1, color: '#778494', width: '100%', textTransform: 'capitalize' }} onClick={()=>navigate("/about")}>About Us</Button>
           <Button sx={{ my: 1, color: '#778494', width: '100%', textTransform: 'capitalize' }} onClick={()=>navigate("/register")}>Register</Button>
