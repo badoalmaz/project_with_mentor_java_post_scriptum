@@ -23,9 +23,8 @@ export default function Footer() {
                     <Box>
                         <NavLink to="/">
                             <IconButton>
-                                <img src={logo} width={15} height={15} alt="Logo" />
+                                <img src={logo} width={20} height={20} alt="Logo" />
                             </IconButton>
-                            <Typography sx={{ color: '#8C2CEF', fontWeight: 700, width:85, height:15 }}>MakerShop</Typography>
                         </NavLink>
                     </Box> 
                 </Box>
