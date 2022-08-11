@@ -72,7 +72,7 @@ export default function Cart() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {cart.products.map((row) => (
+          {cart?.products.map((row) => (
             <StyledTableRow key={row.item.id}>
               <StyledTableCell component="th" scope="row">
                 <img src={row.item.picture} alt="" width="70" />
@@ -109,7 +109,7 @@ export default function Cart() {
       </Table>
       <Box sx={{ m: 5 }}>
         <Typography variant="h6" component="div">
-          Total price: {cart.totalPrice}
+          Total price: {cart?.totalPrice}
           <Button onClick={cartCleaner}>BUY NOW</Button>
         </Typography>
       </Box>
