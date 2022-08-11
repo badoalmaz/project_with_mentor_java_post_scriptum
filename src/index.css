@@ -9,6 +9,15 @@ a {
   color: inherit;
 }
 
+.scale {
+  border-radius: 15px;
+  transition: 0.3s;
+  margin-top: 2%;
+  flex-wrap: wrap;
+}
+.scale:hover {
+  transform: scale(0.8);
+}
 @media (max-width: 800px) {
   .about__m {
     display: flex;
@@ -22,8 +31,7 @@ a {
     position: absolute;
     right: 38%;
   }
-
-  .about_bo {
+  › .about_bo {
     border: none !important;
   }
 }
