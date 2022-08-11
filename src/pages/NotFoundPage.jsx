@@ -4,7 +4,45 @@ import { Paper } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material";
 
+const theme = createTheme();
+
+theme.typography.h3 = {
+  fontSize: "1.3rem",
+  "@media (max-width:600px)": {
+    fontSize: "5.9rem",
+  },
+  "@media (min-width:600px)": {
+    fontSize: "5.9rem",
+  },
+  "@media (max-width:450px)": {
+    fontSize: "3.9rem",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "14rem",
+  },
+};
+
+theme.typography.body1 = {
+  fontSize: "1.3rem",
+  "@media (min-width:600px)": {
+    fontSize: "1.9rem",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "4rem",
+  },
+};
+theme.typography.body2 = {
+  fontSize: "1.3rem",
+  "@media (min-width:600px)": {
+    fontSize: "0.9rem",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1.2rem",
+  },
+};
 const NotFoundPage = () => {
   const navigate = useNavigate();
   return (
@@ -16,13 +54,24 @@ const NotFoundPage = () => {
         flexDirection: "column",
       }}
     >
+      <ThemeProvider theme={theme}>
+        <Typography
+          variant="h3"
+          sx={{
+            color: "#8C2CEF",
+            fontSize: 200,
+            fontWeight: 700,
+          }}
+        >
+          404
+        </Typography>
+      </ThemeProvider>
+
       <Typography
-        variant="h4"
-        sx={{ color: "#8C2CEF", fontSize: 150, fontWeight: 700 }}
+        theme={theme}
+        variant="body1"
+        sx={{ color: "black", flexWrap: "wrap" }}
       >
-        404
-      </Typography>
-      <Typography variant="body1" sx={{ color: "black", fontSize: 45 }}>
         Oops! Page not found
       </Typography>
 
@@ -34,20 +83,16 @@ const NotFoundPage = () => {
           color: "#778494",
           fontWeight: 500,
           opacity: "60%",
+          flexWrap: "wrap",
         }}
-        variant="body1"
+        variant="body2"
+        theme={theme}
       >
         Oops! The page you are looking for doesn't exist. It might have been
         moved or deleted
       </Typography>
-      {/* <img
-        style={{
-          width: 500,
-          height: 400,
-        }}
-        src="https://timeweb.com/ru/community/article/67/67d62d1e0bc27de113cc0e25239705e2.png"
-      /> */}
-      <Box>
+
+      <Box sx={{ flexWrap: "wrap" }}>
         <Button
           sx={{
             my: 1,
