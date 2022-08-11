@@ -96,26 +96,41 @@ export default function Navbar() {
               About Us
             </Button>
           </Link>
-          <Button
-            sx={{
-              my: 1,
-              color: "#778494",
-              width: "100%",
-              textTransform: "capitalize",
-            }}
-          >
-            Register
-          </Button>
-          <Button
-            sx={{
-              my: 1,
-              color: "#778494",
-              width: "100%",
-              textTransform: "capitalize",
-            }}
-          >
-            Login
-          </Button>
+          <Link to="/register">
+            <Button
+              sx={{
+                my: 1,
+                color: "#778494",
+                width: "100%",
+                textTransform: "capitalize",
+              }}
+            >
+              Register
+            </Button>
+          </Link>
+          <Link to="/login">
+            <Button
+              sx={{
+                my: 1,
+                color: "#778494",
+                width: "100%",
+                textTransform: "capitalize",
+              }}
+            >
+              Login
+            </Button>
+          </Link>
+          <Link to="/admin">
+              <Button
+                sx={{
+                  my: 1,
+                  color: "#778494",
+                  width: "100%",
+                  textTransform: "capitalize",
+                }}>
+                Admin panel
+              </Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>

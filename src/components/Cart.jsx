@@ -32,18 +32,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
-
 export default function Cart() {
   const { getCart, changeProductCount, deleteProductInCart, cart } = useCart();
 
@@ -57,19 +45,23 @@ export default function Cart() {
     getCart();
   }
 
+  const trHeadStyle = {
+    backgroundColor: '#666699 !important'
+  }
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Picture</StyledTableCell>
-            <StyledTableCell align="right">Name</StyledTableCell>
-            <StyledTableCell align="right">Type</StyledTableCell>
-            <StyledTableCell align="right">Description</StyledTableCell>
-            <StyledTableCell align="right">Price</StyledTableCell>
-            <StyledTableCell align="right">Count</StyledTableCell>
-            <StyledTableCell align="right">Sub Price</StyledTableCell>
-            <StyledTableCell align="right"> --- </StyledTableCell>
+            <StyledTableCell sx={trHeadStyle}>Picture</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">Name</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">Type</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">Description</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">Price</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">Count</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">Sub Price</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right"> --- </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -100,7 +92,7 @@ export default function Cart() {
               <StyledTableCell align="right">
                 <Button
                   onClick={() => deleteProductInCart(row.item.id)}
-                  startIcon={<DeleteIcon />}
+                  startIcon={<DeleteIcon sx={{ color: '#666699' }} />}
                 ></Button>
               </StyledTableCell>
             </StyledTableRow>

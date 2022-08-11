@@ -3,8 +3,7 @@ import Cart from "../components/Cart";
 
 const CartPage = () => {
   return (
-    <div>
-      CartPage
+    <div style={{marginTop: '2%'}}>
       <Cart />
     </div>
   );
