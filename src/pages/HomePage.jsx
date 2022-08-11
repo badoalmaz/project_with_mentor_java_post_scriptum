@@ -1,7 +1,12 @@
 import React from "react";
+import AdsCards from "../components/products/AdsCards";
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <AdsCards />
+    </div>
+  );
 };
 
 export default HomePage;
