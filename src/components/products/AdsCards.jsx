@@ -60,7 +60,7 @@ export default function AdsCards() {
           className="scale"
         />
         <img
-          onClick={() => navigate("/#")}
+          onClick={() => navigate("/products")}
           src="https://images.wbstatic.net/bners1/desk_loreal_0608_UT.jpg"
           alt="img"
           className="scale"
