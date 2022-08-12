@@ -48,3 +48,6 @@ a {
     border: none !important;
   }
 }
+.css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: rgb(138,78,200 );
+}

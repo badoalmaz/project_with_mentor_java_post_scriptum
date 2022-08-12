@@ -33,7 +33,7 @@ const SideBar = () => {
   //   console.log(window.location.search);
 
   return (
-    <Paper sx={{ m: 5, display: "flex", flexDirection: "column",justifyContent: 'space-between', p: 5 }}>
+    <Paper sx={{ m: 5, display: "flex", flexDirection: "column", p: 5 }}>
       <Box>
         <FormControl>
           <FormLabel id="demo-radio-buttons-group-label" sx={{mb: 2}}>Categories</FormLabel>

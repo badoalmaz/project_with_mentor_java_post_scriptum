@@ -1,0 +1,21 @@
+.item{
+
+
+}
+.item:hover{
+    transform: scale(1.5);
+}
+.footer{
+    padding-top:20px;
+
+    position: relative;
+    right:0;
+
+}
+.css-i4bv87-MuiSvgIcon-root{
+    transition: 0.4s;
+    color:#8C2CEF;
+}
+.css-i4bv87-MuiSvgIcon-root:hover{
+    transform: scale(1.5);
+}
