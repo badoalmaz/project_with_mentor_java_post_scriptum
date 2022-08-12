@@ -4,7 +4,6 @@ import ProductDetails from "../components/products/ProductDetails";
 const ProductDetailsPage = () => {
   return (
     <div>
-      ProductDetailsPage
       <ProductDetails />
     </div>
   );
