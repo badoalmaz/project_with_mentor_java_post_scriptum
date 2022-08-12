@@ -30,13 +30,28 @@ const SideBar = () => {
     getProducts();
   }, [searchParams]);
 
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   //   console.log(window.location.search);
 
   return (
-    <Paper sx={{ m: 5, display: "flex", flexDirection: "column",justifyContent: 'space-between', p: 5 }}>
+    <Paper
+      sx={{
+        m: 5,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        p: 5,
+        maxHeight: "50vh",
+      }}
+    >
       <Box>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label" sx={{mb: 2}}>Categories</FormLabel>
+          <FormLabel id="demo-radio-buttons-group-label" sx={{ mb: 2 }}>
+            Categories
+          </FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="all"
@@ -60,7 +75,7 @@ const SideBar = () => {
         </FormControl>
       </Box>
       <TextField
-        sx={{mt: 3}}
+        sx={{ mt: 3 }}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         id="input-with-icon-textfield"

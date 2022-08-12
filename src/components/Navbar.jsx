@@ -10,9 +10,14 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/icons/logo.svg";
 import { useAuth } from "../contexts/AuthContextProvider";
+import { Badge } from "@mui/material";
+import { useCart } from "../contexts/CartContextProvider";
 
 export default function Navbar() {
   const { user, checkAuth, error, logout } = useAuth();
+
+  const { cart } = useCart();
+  console.log(cart.products.length);
 
   const navigate = useNavigate();
 
@@ -72,16 +77,22 @@ export default function Navbar() {
           </Link>
 
           <Link to="/cart">
-            <Button
-              sx={{
-                my: 1,
-                color: "#778494",
-                width: "100%",
-                textTransform: "capitalize",
-              }}
+            <Badge
+              badgeContent={cart?.products.length}
+              color="secondary"
+              showZero
             >
-              Orders
-            </Button>
+              <Button
+                sx={{
+                  my: 1,
+                  color: "#778494",
+                  width: "100%",
+                  textTransform: "capitalize",
+                }}
+              >
+                Orders
+              </Button>
+            </Badge>
           </Link>
           <Link to="/products">
             <Button

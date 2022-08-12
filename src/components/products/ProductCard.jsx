@@ -38,7 +38,7 @@ export default function ProductCard({ item }) {
             fontSize: "16px",
           }}
         >
-          {item.name}
+          {item.type}
         </Typography>
         <Typography
           gutterBottom
