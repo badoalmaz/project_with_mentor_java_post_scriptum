@@ -1,0 +1,11 @@
+ li .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: rgb(138,38,200 );
+     border:none;
+}
+ li .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root{
+     background-color: rgb(138,120,200 );
+     border:none;
+ }
+ li .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root:hover,li .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover{
+     background-color: rgb(138,0,200 )
+ }

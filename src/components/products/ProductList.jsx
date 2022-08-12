@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductCard from "./ProductCard";
-
+import '../../styles/pagimation.css'
 const ProductList = () => {
   const { products, getProducts } = useProducts();
 
@@ -59,7 +59,7 @@ const ProductList = () => {
       <Pagination
         variant="outlined"
         shape="rounded"
-        sx={{ m: "0 auto" }}
+        sx={{ m:4 }}
         count={count}
         page={page}
         onChange={handlePage}

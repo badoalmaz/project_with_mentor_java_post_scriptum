@@ -8,37 +8,38 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import logo from "../assets/icons/logo.svg";
-
+import '../styles/footer.css'
 export default function Footer() {
     return (
-        <Paper sx={{left: 0, bottom: 0, right: 0, width: '100%'}} component="footer" square variant="outlined">
-            <Container maxWidth="lg" sx={{maxHeight:120}}>
+        <Paper sx={{width: '83.83vw',position:'absolute',right:'0'}}   component="footer" square variant="outlined">
+            <Container className='footer' >
                 <Box
                     sx={{
                         flexGrow: 1,
                         justifyContent: "center",
                         display: "flex",
-                        my: 1
+                        my: 1,
+
                     }}>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", cursor: 'pointer', m: 2 }}>
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", cursor: 'pointer', m: 2 ,gap:'50px'}}>
                     <Link href="https://github.com/badoalmaz/project_with_mentor_java_post_scriptum">
-                        <InstagramIcon sx={{ mr: 7, color: "#8C2CEF" }} />
+                        <InstagramIcon className='item'  />
                     </Link>
                     <Link href="https://github.com/badoalmaz/project_with_mentor_java_post_scriptum">
-                        <TelegramIcon sx={{ mr: 7, color: "#8C2CEF"}} />
+                        <TelegramIcon className='item'  />
                     </Link>
                     <Link href="https://github.com/badoalmaz/project_with_mentor_java_post_scriptum">
-                        <WhatsAppIcon sx={{ mr: 7, color: "#8C2CEF" }} />
+                        <WhatsAppIcon className='item'  />
                     </Link>
                     <Link href="https://github.com/badoalmaz/project_with_mentor_java_post_scriptum">
-                        <TwitterIcon sx={{ mr: 7, color: "#8C2CEF" }} />
+                        <TwitterIcon className='item' />
                     </Link>
                     <Link href="https://github.com/badoalmaz/project_with_mentor_java_post_scriptum">
-                        <MailOutlineIcon sx={{ mr: 7, color: "#8C2CEF" }} />
+                        <MailOutlineIcon className='item'  />
                     </Link>
                     <Link href="https://github.com/badoalmaz/project_with_mentor_java_post_scriptum">
-                      <GitHubIcon sx={{ mr: 7, color: "#8C2CEF"}} />   
+                      <GitHubIcon className='item'  />
                     </Link>
                 </Box>
                 <Box
@@ -49,7 +50,7 @@ export default function Footer() {
                         mb: 2,
                     }}
                 >
-                    <Typography variant="caption" color="#8C2CEF">
+                    <Typography style={{fontWeight:'600',fontSize:'14px',marginTop:'10px'}} variant="caption" color="#8C2CEF">
                         Copyright ©2022.
                     </Typography>
                 </Box>
