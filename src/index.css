@@ -19,6 +19,9 @@ a {
   content: "<" !important;
 }
 
+.css-1ptx2yq-MuiInputBase-root-MuiInput-root:before {
+  border: none !important;
+}
 .scale {
   border-radius: 15px;
   transition: 0.3s;

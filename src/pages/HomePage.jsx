@@ -1,6 +1,8 @@
+import React from "react";
+import MediaList from "../components/media/MediaList";
+import Navbar from "../components/Navbar";
 import AdsCards from "../components/products/AdsCards";
 
-import React from "react";
 import {
   MDBCarousel,
   MDBCarouselInner,
@@ -43,7 +45,9 @@ const HomePage = () => {
         </MDBCarouselInner>
       </MDBCarousel>
       {/* Beks */}
+      <Navbar />
       <AdsCards />
+      <MediaList />
     </div>
   );
 };

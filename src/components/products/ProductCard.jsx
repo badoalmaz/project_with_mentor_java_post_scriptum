@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
-
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import { IconButton } from "@mui/material";
 import { useCart } from "../../contexts/CartContextProvider";
