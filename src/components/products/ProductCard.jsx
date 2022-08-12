@@ -51,7 +51,7 @@ export default function ProductCard({ item }) {
 
         <IconButton onClick={() => addProductToCart(item)}>
           <ShoppingCartRoundedIcon
-            color={checkProductInCart(item.id) ? "primary" : ""}
+            color={checkProductInCart(item.id) ? "secondary" : ""}
           />
         </IconButton>
       </CardActions>

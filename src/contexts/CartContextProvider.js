@@ -7,6 +7,7 @@ import {
 } from "../helpers/functions";
 
 const cartContext = createContext();
+
 export const useCart = () => {
   return useContext(cartContext);
 };
@@ -73,7 +74,8 @@ const CartContextProvider = ({ children }) => {
     // если не найдется элемент в localStorage,
     // то он добавит элемент в localStorage,а если найдет, то удалит
 
-    if (productToFind.length == 0) {
+    // если не найдется элемент в localStorage, то он добавит элемент в localStorage,а если найдет, то удалит
+    if (productToFind.length === 0) {
       cart.products.push(newProduct);
     } else {
       cart.products = cart.products.filter(
@@ -93,14 +95,12 @@ const CartContextProvider = ({ children }) => {
 
   function deleteProductInCart(id) {
     let cart = JSON.parse(localStorage.getItem("cart"));
+
     cart.products = cart.products.filter((elem) => elem.item.id !== id);
-
     cart.totalPrice = calcTotalPrice(cart.products);
-
     localStorage.setItem("cart", JSON.stringify(cart));
 
     getCart();
-
     dispatch({
       type: CART.GET_CART_LENGTH,
       payload: cart,
@@ -114,7 +114,6 @@ const CartContextProvider = ({ children }) => {
         product.count = count;
         product.subPrice = calcSubPrice(product);
       }
-
       return product;
     });
     cart.totalPrice = calcTotalPrice(cart.products);
@@ -127,8 +126,9 @@ const CartContextProvider = ({ children }) => {
 
   function checkProductInCart(id) {
     let cart = JSON.parse(localStorage.getItem("cart"));
+
     if (cart) {
-      let newCart = cart.products.filter((elem) => elem.item.id == id);
+      let newCart = cart.products.filter((elem) => elem.item.id === id);
       return newCart.length > 0 ? true : false;
     } else {
       cart = {
@@ -144,7 +144,6 @@ const CartContextProvider = ({ children }) => {
     changeProductCount,
     checkProductInCart,
     deleteProductInCart,
-
     cart: state.cart,
   };
 

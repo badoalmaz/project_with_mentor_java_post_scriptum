@@ -7,10 +7,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { useEffect } from "react";
 import { useCart } from "../contexts/CartContextProvider";
-import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { Button, TextField, Typography } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -47,7 +47,7 @@ const rows = [
 export default function Cart() {
   const { getCart, changeProductCount, deleteProductInCart, cart } = useCart();
 
-  useEffect(() => {
+  React.useEffect(() => {
     getCart();
   }, []);
   console.log(cart);
@@ -57,23 +57,42 @@ export default function Cart() {
     getCart();
   }
 
+  const trHeadStyle = {
+    backgroundColor: "#666699 !important",
+  };
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Picture</StyledTableCell>
-            <StyledTableCell align="right">Name</StyledTableCell>
-            <StyledTableCell align="right">Type</StyledTableCell>
-            <StyledTableCell align="right">Description</StyledTableCell>
-            <StyledTableCell align="right">Price</StyledTableCell>
-            <StyledTableCell align="right">Count</StyledTableCell>
-            <StyledTableCell align="right">Sub Price</StyledTableCell>
-            <StyledTableCell align="right">---</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle}>Picture</StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">
+              Name
+            </StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">
+              Type
+            </StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">
+              Description
+            </StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">
+              Price
+            </StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">
+              Count
+            </StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">
+              Sub Price
+            </StyledTableCell>
+            <StyledTableCell sx={trHeadStyle} align="right">
+              {" "}
+              ---{" "}
+            </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {cart.products.map((row) => (
+          {cart?.products.map((row) => (
             <StyledTableRow key={row.item.id}>
               <StyledTableCell component="th" scope="row">
                 <img src={row.item.picture} alt="" width="70" />
@@ -87,12 +106,9 @@ export default function Cart() {
               </StyledTableCell>
               <StyledTableCell align="right">{row.item.price}</StyledTableCell>
               <StyledTableCell align="right">
-                <input
+                <TextField
                   type="number"
                   value={row.count}
-                  min={1}
-                  max={100}
-                  x
                   onChange={(e) =>
                     changeProductCount(e.target.value, row.item.id)
                   }
@@ -101,9 +117,10 @@ export default function Cart() {
 
               <StyledTableCell align="right">{row.subPrice}</StyledTableCell>
               <StyledTableCell align="right">
-                <Button onClick={() => deleteProductInCart(row.item.id)}>
-                  DELETE
-                </Button>
+                <Button
+                  onClick={() => deleteProductInCart(row.item.id)}
+                  startIcon={<DeleteIcon sx={{ color: "#666699" }} />}
+                ></Button>
               </StyledTableCell>
             </StyledTableRow>
           ))}
@@ -111,9 +128,9 @@ export default function Cart() {
       </Table>
       <Box sx={{ m: 5 }}>
         <Typography variant="h6" component="div">
-          Total price: {cart.totalPrice}
+          Total price: {cart?.totalPrice}
+          <Button onClick={cartCleaner}>BUY NOW</Button>
         </Typography>
-        <Button onClick={cartCleaner}>BUY NOW</Button>
       </Box>
     </TableContainer>
   );
