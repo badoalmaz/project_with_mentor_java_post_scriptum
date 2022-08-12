@@ -37,11 +37,23 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar sx={appBarStyle}>
         <Toolbar sx={{ mt: 2, display: "flex", flexDirection: "column" }}>
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent: 'center' }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <IconButton>
-              <img src={logo} alt="logo" style={{ width: '5vmin',minWidth: "10px", maxWidth: '70%' }} />
+              <img
+                src={logo}
+                alt="logo"
+                style={{ width: "5vmin", minWidth: "10px", maxWidth: "70%" }}
+              />
             </IconButton>
-            <Typography sx={{ color: "#8C2CEF", fontWeight: 700, fontSize: '2vmin' }}>
+            <Typography
+              sx={{ color: "#8C2CEF", fontWeight: 700, fontSize: "2vmin" }}
+            >
               MakerShop
             </Typography>
           </Box>
@@ -71,7 +83,6 @@ export default function Navbar() {
               Orders
             </Button>
           </Link>
-
           <Link to="/products">
             <Button
               sx={{
@@ -121,15 +132,16 @@ export default function Navbar() {
             </Button>
           </Link>
           <Link to="/admin">
-              <Button
-                sx={{
-                  my: 1,
-                  color: "#778494",
-                  width: "100%",
-                  textTransform: "capitalize",
-                }}>
-                Admin panel
-              </Button>
+            <Button
+              sx={{
+                my: 1,
+                color: "#778494",
+                width: "100%",
+                textTransform: "capitalize",
+              }}
+            >
+              Admin panel
+            </Button>
           </Link>
         </Toolbar>
       </AppBar>
