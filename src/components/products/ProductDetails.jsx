@@ -42,7 +42,10 @@ const ProductDetails = () => {
           <Typography className="productDetails_price" variant="caption">
             ${productDetails.price}
           </Typography>
-          <Typography className="productDetails_descr">
+          <Typography
+            sx={{ paddingRight: "20px" }}
+            className="productDetails_descr"
+          >
             {productDetails.description}
           </Typography>
         </Grid>
