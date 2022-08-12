@@ -4,9 +4,19 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.carousel-control-next-icon::after {
+  content: ">" !important;
+}
+.carousel-control-prev-icon::after {
+  content: "<" !important;
 }
 
 .scale {
